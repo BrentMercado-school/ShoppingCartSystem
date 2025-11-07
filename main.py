@@ -21,6 +21,8 @@ products = [
     }
 ]
 
+customer = []
+
 while True:
     print("==============================")
     print("\tWELCOME TO PYTHON MART")
@@ -37,3 +39,19 @@ while True:
         print("--------------------------------")
         input("Press any key to continue...")
         print("\n")
+
+    elif choice == '2':
+        print("\n------ AVAILABLE PRODUCTS ------")
+        for product in products:
+            print(f"{product['name']} - ₱{product['price']} (Stock: {product['quantity']})")
+        print("--------------------------------")
+        name = input("Enter product name: ")
+        for product in products:
+            if product['name'] == name:
+                quantity = int(input("Enter quantity: "))
+                product['quantity'] -= quantity
+                price = product['price'] * quantity
+                customer.append({'name': name, 'price': price, 'quantity': quantity})
+                print(f"{quantity} {product['name']} added to your cart!")
+                input("Press any key to continue...")
+                print("\n")
