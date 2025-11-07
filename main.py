@@ -55,3 +55,20 @@ while True:
                 print(f"{quantity} {product['name']} added to your cart!")
                 input("Press any key to continue...")
                 print("\n")
+
+    elif choice == '4':
+        print("\n------ YOUR SHOPPING CART ------")
+        if len(customer) == 0:
+            print("You don't have anything in your cart")
+            input("Press any key to continue...")
+            print("\n")
+        else:
+            total_price = 0
+            for product in customer:
+                print(f"{product['name']} x{product['quantity']} = ₱{product['price']}")
+                total_price += product['price']
+            print("--------------------------------")
+            print(f"Total: ₱{total_price}")
+            print("--------------------------------")
+            input("Press any key to continue...")
+            print("\n")
