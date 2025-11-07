@@ -56,6 +56,30 @@ while True:
                 input("Press any key to continue...")
                 print("\n")
 
+        print(customer)
+
+    elif choice == '3':
+        print("\n------ YOUR SHOPPING CART ------")
+        if len(customer) == 0:
+            print("You don't have anything in your cart")
+            input("Press any key to continue...")
+            print("\n")
+
+        else:
+            for product in customer:
+                print(f"{product['name']} x{product['quantity']} = ₱{product['price']}")
+            print("--------------------------------")
+            name = input("Enter product name to remove: ")
+            index = 0
+            for product in customer:
+                if product['name'] == name:
+                    customer.pop(index)
+                    print(f"{product['name']} removed from your cart!")
+                    input("Press any key to continue...")
+                    print("\n")
+                    break
+                index += 1
+
     elif choice == '4':
         print("\n------ YOUR SHOPPING CART ------")
         if len(customer) == 0:
