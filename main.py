@@ -29,3 +29,11 @@ while True:
           "\n5. Checkout\n6. Exit")
     print("------------------------------")
     choice = input("Enter your choice: ")
+
+    if choice == '1':
+        print("\n------ AVAILABLE PRODUCTS ------")
+        for product in products:
+            print(f"{product['name']} - ₱{product['price']} (Stock: {product['quantity']})")
+        print("--------------------------------")
+        input("Press any key to continue...")
+        print("\n")
